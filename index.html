@@ -7,7 +7,24 @@
   <title>JavaScript Lab</title>
 </head>
 <body>
-  hello
+  <h1>Hello, JavaScript Lab!</h1>
   <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript">
+   document.addEventListener('DOMContentLoaded', function() {
+      const employeesData = [
+        ["John", "Doe", "Developer", 25],
+        ["Jane", "Smith", "Designer", 30]
+      ];
+      let employees = createEmployeeRecords(employeesData);
+      employees.forEach(employee => {
+        createTimeInEvent(employee, "2024-07-24 0900");
+        createTimeOutEvent(employee, "2024-07-24 1700");
+        createTimeInEvent(employee, "2024-07-25 0900");
+        createTimeOutEvent(employee, "2024-07-25 1800");
+      });
+      console.log("Employees:", employees);
+      console.log("Total payroll:", calculatePayroll(employees))
+    });
+  </script>
 </body>
 </html>
